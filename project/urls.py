@@ -9,8 +9,12 @@ urlpatterns = [
     # url(r'^$', 'project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^$', index),
-    url(r'^health$', health),
+    # url(r'^$', index),
+    # url(r'^health$', health),
+
+    url(r'^blog/', include('blog.urls')),    # blog app
+    url(r'^polls/', include('polls.urls')),  # django tutorial
+    url(r'^$', include('home.urls')), 
     url(r'^admin/', include(admin.site.urls)),
 ]
 
